@@ -1,17 +1,5 @@
-//
-//@font-face {
-//  font-family: 'roboto';
-//  src: url('fonts/pixel-unicode-webfont.eot');
-//  src: url('fonts/pixel-unicode-webfont.eot?#iefix') format('embedded-opentype'),
-//  url('fonts/pixel-unicode-webfont.woff') format('woff'),
-//  url('fonts/pixel-unicode-webfont.ttf') format('truetype'),
-//  url('fonts/pixel-unicode-webfont.svg#pixel_unicoderegular') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-
 #contentWrapper {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -27,7 +15,7 @@
  * GLOBAL STYLES
  *********************************************/
 .reveal {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 36px;
   color: #fff;
@@ -35,7 +23,7 @@
 }
 
 .reveal code {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #999;
 }
 
@@ -53,10 +41,14 @@
   float: none;
 }
 
+.reveal .slides>section video {
+  width: 100%
+}
+
 .reveal .slides>section img
 {
-  max-height: 11em;
-  min-height: 30%;
+//  max-height: 11em;
+//  min-height: 30%;
 }
 
 ::selection {
@@ -118,3 +110,44 @@
   border-color: #3b759e;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
+.reveal blockquote {
+  background-color: transparent;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.reveal blockquote:before {
+  color: #fff;
+  content: open-quote;
+  font-size: 5em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.wc-box {
+  padding: 3em 0 !important;
+}
+.wc-box.mb {
+  margin-bottom: 3em !important;
+}
+.box-templates{
+  background-color: #8bc34a;
+}
+.box-elements{
+  background-color: #5677fc;
+}
+.box-shadow{
+  background-color: #7e57c2;
+}
+.box-imports{
+  background-color: #ffb300;
+}
+.box-modularity {
+  background-color: #00bcd4;
+}
+.box-encapsulation {
+  background-color: #9c27b0;
+}
+.box-integration {
+  background-color: #a1887f;
+}

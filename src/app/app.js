@@ -42,12 +42,13 @@ angular.module( 'webComponentsPresentation', [
       $(function() {
         element.on('keyup', function(event) {
 
+//          console.log('keyup: ', event.which);
           if (globals.keys.next.indexOf(event.which) > -1) {
-            console.log('keyupNext: ', event.which);
+//            console.log('keyupNext: ', event.which);
             scope.$root.$broadcast('keyUpNext', event.which);
           }
           if (globals.keys.prev.indexOf(event.which) > -1) {
-            console.log('keyupPrev: ', event.which);
+//            console.log('keyupPrev: ', event.which);
             scope.$root.$broadcast('keyUpPrev', event.which);
           }
         });

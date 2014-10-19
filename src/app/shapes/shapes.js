@@ -22,8 +22,8 @@ angular.module( 'webComponentsPresentation.shapes', [
       case 'why':
         shapeShifter.action('Why?');
         break;
-      case 'problems':
-        shapeShifter.action('Problemy');
+      case 'wc':
+        shapeShifter.action('Web|Components');
         break;
       default:
         shapeShifter.action(params.name);
