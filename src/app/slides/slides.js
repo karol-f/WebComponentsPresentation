@@ -8,17 +8,21 @@ angular.module( 'webComponentsPresentation.slides', [
       templateUrl : 'slides/slides.toc.tpl.html',
       controller  : 'SlidesCtrl'
     })
+    .when('/slides/test', {
+      templateUrl : 'slides/slides.test.tpl.html',
+      controller  : 'SlidesCtrl'
+    })
   ;
 })
 
-.controller( 'SlidesCtrl', function( $scope, $rootScope, globals, route, shapeShifter, reveal ) {
-
-  globals.focus();
-  shapeShifter.clear();
+.controller( 'SlidesCtrl', function( $scope, $rootScope, globals, shapeShifter, reveal, director ) {
 
   reveal.start()
     .then(function() {
-      route.next();
+      director.next();
+    },
+    function() {
+      director.prev();
     });
 
 })

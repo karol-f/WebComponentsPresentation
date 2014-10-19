@@ -149,3 +149,55 @@ iframe {
 .col-7-12 {
   width: 58.33%
 }
+
+.slide-container {
+}
+
+.slide-animation.ng-enter, .slide-animation.ng-leave {
+}
+
+.slide-animation.ng-enter {
+  -webkit-animation: 0.5s slide-animation-enter;
+  animation: 0.5s slide-animation-enter;
+}
+
+.slide-animation.ng-leave {
+  -webkit-animation: 0.5s slide-animation-leave;
+  animation: 0.5s slide-animation-leave;
+}
+
+@keyframes slide-animation-enter {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+@keyframes slide-animation-leave {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes slide-animation-enter {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes slide-animation-leave {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}

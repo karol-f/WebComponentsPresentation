@@ -13,6 +13,9 @@ angular.module('reveal', [])
     this.promiseResolve = function() {
       deffer.resolve();
     };
+    this.promiseReject = function() {
+      deffer.reject();
+    };
 
     this.start = function() {
       _root.promisePrepare();
@@ -33,15 +36,17 @@ angular.module('reveal', [])
         autoSlide: 0,
 
         // Transition style
-        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
         // Transition speed
-        transitionSpeed: 'default', // default/fast/slow
+        transitionSpeed: '1000', // default/fast/slow
 
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
         minScale: 0.5,
-        maxScale: 2.0
+        maxScale: 2.0,
+        width: 960,
+        height: 700
       });
       Reveal.slide( 0 );
 
@@ -50,11 +55,21 @@ angular.module('reveal', [])
 
   })
 
-  .run( function ( $rootScope, reveal ) {
+  .run( function ( $rootScope, reveal, globals ) {
     $('body').unbind('keydown.reveal').bind('keydown.reveal', function(){
-      if ( event.which === 39 && Reveal.isLastSlide() ) {
-        $rootScope.$emit('slideshow:finished');
-        reveal.promiseResolve();
+      if ( globals.keys.next.indexOf(event.which) > -1 && Reveal.isLastSlide() ) {
+        if (!Reveal.availableFragments().next) {
+          $rootScope.$emit('slideshow:finished');
+          reveal.promiseResolve();
+          Reveal.removeEventListeners();
+        }
+      }
+      if ( globals.keys.prev.indexOf(event.which) > -1 && Reveal.isFirstSlide() ) {
+        if (!Reveal.availableFragments().prev) {
+          $rootScope.$emit('slideshow:beforeStart');
+          reveal.promiseReject();
+          Reveal.removeEventListeners();
+        }
       }
     });
   })

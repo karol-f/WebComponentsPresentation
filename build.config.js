@@ -69,9 +69,11 @@ module.exports = {
       'vendor/jquery/dist/jquery.js',
       'vendor/angular/angular.js',
       'vendor/angular-route/angular-route.js',
+      'vendor/angular-animate/angular-animate.js',
       'vendor/lodash/dist/lodash.min.js',
       'vendor/reveal.js/js/reveal.js',
-      'vendor/Shape-Shifter/release/shape-shifter.js'
+      'vendor/Shape-Shifter/release/shape-shifter.js',
+      'vendor/angular-debounce/dist/angular-debounce.js'
     ],
     css: [
       'vendor/animate.css/animate.css',

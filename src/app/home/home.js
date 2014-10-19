@@ -10,13 +10,9 @@ angular.module( 'webComponentsPresentation.home', [
     });
 })
 
-.controller( 'HomeCtrl', function( $scope, shapeShifter, director ) {
+.controller( 'HomeCtrl', function( $scope, shapeShifter ) {
 
   shapeShifter.action('Home');
-
-  $scope.$on('keyUpNext', function() {
-    director.next();
-  });
 
 })
 

@@ -14,15 +14,14 @@
     <link rel="stylesheet" type="text/css" href="assets/<%= name %>-<%= version %>.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,900,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   </head>
-  <body shape-shifter-ready broadcast-key-up>
+  <body shape-shifter-ready broadcast-key-up director>
 
     <canvas class="canvas"></canvas>
-    <canvas class="2d"></canvas>
 
     <!-- Main view
     ================================================== -->
-    <div id="contentWrapper">
-      <div ng-view></div>
+    <div id="contentWrapper" class="slide-container">
+      <div ng-view class="slide-animation"></div>
     </div>
 
     <div class="hide">

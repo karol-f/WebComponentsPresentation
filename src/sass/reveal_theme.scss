@@ -30,7 +30,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 36px;
-  color: #333333;
+  color: #fff;
   margin-left: -0.76em;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .reveal .slides>section {
-  background-color: #f7fbfc;
+  background-color: transparent;
   padding: 1em;
 }
 
@@ -74,9 +74,8 @@
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333333;
   font-family: 'Roboto', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.9em;
   text-transform: uppercase;
   text-shadow: none; }

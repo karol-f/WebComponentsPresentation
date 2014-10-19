@@ -1,5 +1,6 @@
 angular.module( 'webComponentsPresentation', [
   'ngRoute',
+  'ngAnimate',
   'templates-app',
   'templates-common',
 
@@ -11,12 +12,14 @@ angular.module( 'webComponentsPresentation', [
   'webComponentsPresentation.route',
   'shapeShifter',
   'director',
-  'reveal'
+  'reveal',
+
+  'rt.debounce'
 ])
 
 .config( function myAppConfig ( routeProvider ) {
   routeProvider
-    .otherwise({ path: '/home' });
+    .otherwise({ path: 'shapes/home' });
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, globals ) {
@@ -33,22 +36,19 @@ angular.module( 'webComponentsPresentation', [
   globals.focus();
 })
 
-.directive('broadcastKeyUp', function () {
+.directive('broadcastKeyUp', function (globals) {
   return {
     link: function(scope, element) {
       $(function() {
         element.on('keyup', function(event) {
-          var acceptedKeys = [
-            39,
-            32,
-            40,
-            13
-          ];
-          scope.$broadcast('keyUp', event.which);
 
-          if (acceptedKeys.indexOf(event.which) > -1) {
+          if (globals.keys.next.indexOf(event.which) > -1) {
             console.log('keyupNext: ', event.which);
-            scope.$broadcast('keyUpNext', event.which);
+            scope.$root.$broadcast('keyUpNext', event.which);
+          }
+          if (globals.keys.prev.indexOf(event.which) > -1) {
+            console.log('keyupPrev: ', event.which);
+            scope.$root.$broadcast('keyUpPrev', event.which);
           }
         });
 
