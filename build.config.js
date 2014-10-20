@@ -71,13 +71,14 @@ module.exports = {
       'vendor/angular-route/angular-route.js',
       'vendor/angular-animate/angular-animate.js',
       'vendor/lodash/dist/lodash.min.js',
+      'vendor/reveal.js/plugin/highlight/highlight.js',
       'vendor/reveal.js/js/reveal.js',
       'vendor/Shape-Shifter/release/shape-shifter.js',
       'vendor/angular-debounce/dist/angular-debounce.js'
     ],
     css: [
       'vendor/animate.css/animate.css',
-      'vendor/reveal.js/css/reveal.min.css'
+      'vendor/reveal.js/css/reveal.css'
     ],
     assets: [
     ]

@@ -1,3 +1,4 @@
+/*global hljs*/
 angular.module('reveal', [])
 
   .service('reveal', function ($q) {
@@ -48,6 +49,7 @@ angular.module('reveal', [])
         width: 960,
         height: 700
       });
+      hljs.initHighlightingOnLoad();
       Reveal.slide( 0 );
 
       return _root.promise();
