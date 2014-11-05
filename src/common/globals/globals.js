@@ -24,7 +24,7 @@ angular.module('webComponentsPresentation.globals', [])
     '/slides/shadow',
     '/shapes/HTML Imports',
     '/slides/imports',
-    '/shapes/Benefits',
+    '/shapes/Zalety',
     '/slides/benefits',
     '/shapes/Demo',
     '/slides/demo',

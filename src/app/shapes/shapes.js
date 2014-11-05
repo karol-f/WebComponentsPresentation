@@ -20,7 +20,7 @@ angular.module( 'webComponentsPresentation.shapes', [
         shapeShifter.action('Web Components');
         break;
       case 'why':
-        shapeShifter.action('Why?');
+        shapeShifter.action('Dlaczego?');
         break;
       case 'wc':
         shapeShifter.action('Web|Components');
